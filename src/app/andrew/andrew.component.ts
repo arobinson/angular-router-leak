@@ -22,6 +22,12 @@ export class AndrewComponent {
       .subscribe();
   }
 
+  onCloseSync(): void {
+    this.router.navigate(['/homepage']).catch((err) => {
+      console.error(err);
+    })
+  }
+
   ngOnDestroy(): void {
     this.onDestroy.next(undefined);
     this.onDestroy.complete();
